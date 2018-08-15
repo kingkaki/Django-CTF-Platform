@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractUser
 
 class Player(AbstractUser):
 	description = models.TextField('个人简介', default="")
-	avatar = models.ImageField('头像',upload_to='static/avatars/', default='static/avatars/default.jpg',max_length=100)
+	avatar = models.ImageField('头像',upload_to='avatars/', default='avatars/default.jpg',max_length=100)
 	last_login = models.DateTimeField('最后登录时间', default=datetime.now())
 
 	def __str__(self):

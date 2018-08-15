@@ -4,13 +4,19 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.hashers import make_password, check_password
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from .forms import *
 from .models import *
 
 # Create your views here.
 class IndexView(View):
+
+	@method_decorator(login_required)
 	def get(self, request):
-		return HttpResponse('hello %s!' % request.user.username) 
+		return render(request, 'player/index.html')
+
+
 
 class RegisterView(View):
 	def get(self, request):
@@ -62,4 +68,4 @@ class LoginView(View):
 class LogoutView(View):
 	def get(self, request):
 		logout(request)
-		return HttpResponse('登出')
+		return HttpResponseRedirect(reverse('player:login'))

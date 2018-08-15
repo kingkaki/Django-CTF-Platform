@@ -1,0 +1,12 @@
+{% extends 'player/layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+
+{% block form %}	
+	<div class="row">
+	<img src="{{ MEDIA_URL }}{{ request.user.avatar }}" class="img-circle center-block" height="200" width="200"  />
+	</div> 
+	<h2 class="text-center">Hello {{ request.user }}!</h2>
+
+{% endblock %}
