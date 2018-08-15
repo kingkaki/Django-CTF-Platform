@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+	'player.apps.PlayerConfig',
 	'django.contrib.admin',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
@@ -89,6 +90,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+# AUTH_USER_MODEL = "player.Player"
 
 AUTH_PASSWORD_VALIDATORS = [
 	{
@@ -105,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 	},
 ]
 
+AUTH_USER_MODEL = 'player.Player'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -124,3 +127,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
