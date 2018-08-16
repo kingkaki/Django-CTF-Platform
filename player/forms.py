@@ -2,7 +2,7 @@
 # @Author: kingkk
 # @Date:   2018-08-15 12:02:17
 # @Last Modified by:   kingkk
-# @Last Modified time: 2018-08-15 17:59:48
+# @Last Modified time: 2018-08-16 11:27:41
 
 from django import forms
 from django.forms import widgets, ValidationError
@@ -105,5 +105,18 @@ class LoginForm(forms.Form):
 			return user
 
 
+class EditForm(forms.Form):
+	avatar = forms.ImageField(
+		required=False,
+		max_length=5242880,
+	)
+	description = forms.CharField(
+		# required=False,
+		widget=widgets.TextInput(attrs={
+			'class':'form-control',
+		}),
+	)
+
+	
 
 			

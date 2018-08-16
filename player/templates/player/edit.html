@@ -1,0 +1,21 @@
+{% extends 'player/layout.html' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block form %}
+<h2 class="form-signin-heading text-center">About Me</h2>
+<img src="{{ MEDIA_URL }}{{ request.user.avatar }}" class="img-circle center-block" height="200" width="200"  />
+<div class="container col-md-6 col-md-offset-3">
+  <form class="form-signin" method="POST" enctype="multipart/form-data">
+	{{ form }}
+	{% csrf_token %}
+	<br>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">edit</button>
+  </form>
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+	document.getElementById("id_description").value="{{ request.user.description }}";
+</script>
+{% endblock %}

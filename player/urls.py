@@ -2,7 +2,7 @@
 # @Author: kingkk
 # @Date:   2018-08-15 10:24:41
 # @Last Modified by:   kingkk
-# @Last Modified time: 2018-08-15 17:56:40
+# @Last Modified time: 2018-08-16 10:26:22
 
 from django.urls import path
 
@@ -14,4 +14,5 @@ urlpatterns = [
 	path('register/', views.RegisterView.as_view(), name='register'),
 	path('login/', views.LoginView.as_view(), name='login'),
 	path('logout/', views.LogoutView.as_view(), name='logout'),
+	path('edit/', views.EditView.as_view(), name='edit'),
 ]
