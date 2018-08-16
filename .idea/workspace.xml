@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921b7970-7ee3-4be7-bdde-0d24bd7a0c73" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/player/forms.py" afterPath="$PROJECT_DIR$/player/forms.py" />
-      <change beforePath="$PROJECT_DIR$/player/templates/player/layout.html" afterPath="$PROJECT_DIR$/player/templates/player/layout.html" />
-      <change beforePath="$PROJECT_DIR$/player/templates/player/navbar.html" afterPath="$PROJECT_DIR$/player/templates/player/navbar.html" />
-      <change beforePath="$PROJECT_DIR$/player/urls.py" afterPath="$PROJECT_DIR$/player/urls.py" />
-      <change beforePath="$PROJECT_DIR$/player/views.py" afterPath="$PROJECT_DIR$/player/views.py" />
+      <change beforePath="$PROJECT_DIR$/Django_CTF_Platform/settings.py" afterPath="$PROJECT_DIR$/Django_CTF_Platform/settings.py" />
+      <change beforePath="$PROJECT_DIR$/Django_CTF_Platform/urls.py" afterPath="$PROJECT_DIR$/Django_CTF_Platform/urls.py" />
+      <change beforePath="$PROJECT_DIR$/player/static/css/signin.css" afterPath="$PROJECT_DIR$/player/static/css/signin.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />

@@ -22,6 +22,7 @@ from .settings import MEDIA_ROOT
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('player/', include('player.urls')),
+    path('ctf/', include('ctf.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root':MEDIA_ROOT}),
 
 ]
