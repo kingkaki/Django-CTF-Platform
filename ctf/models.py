@@ -6,7 +6,7 @@ from player.models import Player
 
 # Create your models here.
 class Competition(models.Model):
-	name = models.CharField('赛事名称', max_length=50, default="")
+	name = models.CharField('赛事名称', unique=True,max_length=50, default="")
 	description = models.TextField('赛事描述', default="", blank=True)
 	start_time = models.DateTimeField('开赛时间')
 	end_time = models.DateTimeField('结束时间')
@@ -35,7 +35,7 @@ class Topic(models.Model):
 
 
 class Status(models.Model):
-	topic = models.ForeignKey(Competition, on_delete=models.CASCADE)
+	topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 	player = models.ForeignKey(Player, on_delete=models.CASCADE)
 	solve_time = models.DateTimeField('解题时间')
 	score = models.IntegerField("题目分值", default=0)

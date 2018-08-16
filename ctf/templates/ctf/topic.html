@@ -1,0 +1,36 @@
+{% extends 'ctf/layout.html' %}
+{% load static %}
+{% block title %}Topic{% endblock %}
+
+
+{% block form %}	
+	<div class="row">
+	<h1 class="text-center">{{ topic.name }}</h1>
+	</div> 
+	<br>
+	<h3 class="text-center">分值：{{ topic.score }}</h3>
+	<h3 class="text-center">题目描述：{{ topic.description }}</h2>
+	
+	<h3 class="text-center">题目地址：<a href="{{ topic.address }}">{{ topic.address }}</a></h3>
+	<br>
+	<form class="form-group col-md-4 col-md-offset-4" method="POST">
+		{% if msg %}
+			{% ifequal msg.0 'success' %}
+			<div class="alert alert-success">{{ msg.1 }}</div>
+			{% endifequal %}
+			{% ifequal msg.0 'error' %}
+			<div class="alert alert-danger">{{ msg.1 }}</div>
+			{% endifequal %}
+		{% endif %}
+
+		{% if has_solved %}
+			<h2 class="text-center">you has sloved it.</h2>
+		{% else %}
+			{{ form }}
+		{% csrf_token %}
+		<br>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">submit</button>
+		{% endif %}
+	</form>
+
+{% endblock %}

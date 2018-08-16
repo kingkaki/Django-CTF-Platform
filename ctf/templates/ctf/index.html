@@ -1,0 +1,20 @@
+{% extends 'ctf/layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+
+{% block form %}	
+	<div class="row">
+	<h1 class="text-center">{{ competition_name }}</h1>
+	</div> 
+	{% for ctf in ctfs %}
+	
+		<div class="container-fluid col-md-3" style="height: 200px">
+          <h2 class="text-center">{{ ctf.name }}</h2>
+          <p class="text-center">{{ ctf.score }}</p>
+          <p class="text-center">{{ ctf.description }}</p>
+          <p class="text-center"><a class="btn btn-info" href="{% url 'ctf:topic' ctf.id %}" role="button">Attack it &raquo;</a></p>
+        </div>
+	{% endfor %}
+
+{% endblock %}

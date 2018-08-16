@@ -65,7 +65,7 @@ class LoginView(View):
 			login(request, user)
 			user.last_login = datetime.now()
 			user.save()
-			return HttpResponseRedirect(reverse('player:index'))
+			return HttpResponseRedirect(request.GET.get('next'))
 		else:
 			return render(request, 'player/login.html', {'form':form})
 
